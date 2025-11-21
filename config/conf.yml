@@ -1,0 +1,48 @@
+site: https://github.com/jin040907/UniLost.git
+theme: "default"
+
+# Anchor definitions for reusable structures
+base_list: &base_list
+  - item1
+  - item2
+  - item3
+
+student_details_template: &student_details
+  fatherName: william
+  motherName: marry
+
+subjects_template: &subjects
+  - subject1
+  - subject2
+
+items:
+  - 6
+  - 7
+  - 8
+
+name:
+  - "six"
+  - "seven"
+  - "eight"
+  - "nine"
+
+student:
+  name: john
+  details:
+    <<: *student_details
+  more: *subjects
+
+# Example of using anchors for similar data
+student2:
+  name: jane
+  details:
+    <<: *student_details
+    fatherName: robert  # Can override specific values
+  more: *subjects
+
+collections:
+  invitee:
+    path: _invitee
+    files:
+      - choi
+      - jin

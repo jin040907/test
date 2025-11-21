@@ -1,0 +1,41 @@
+title: Conf Parser Workspace
+description: >
+  Documentation site for the YAML configuration parser, invitee collection,
+  and supporting tools.
+baseurl: ""
+url: ""
+theme: null
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+collections:
+  invitee:
+    output: true
+    permalink: /invitee/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: invitee
+    values:
+      layout: invitee
+      title: ""
+
+sass:
+  style: compressed
+
+exclude:
+  - node_modules
+  - package-lock.json
+  - package.json
+  - scripts/
+  - config/
+  - docs/
+  - Makefile
+  - wrap_rst_html.py
+  - vendor/
+
+# Note: _static/ folder is automatically included as static files by Jekyll
+

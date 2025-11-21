@@ -1,0 +1,21 @@
+- id: S001
+  name: Choi Minseo
+  major: Computer Science
+  year: Senior
+  email: choi.minseo@example.edu
+- id: S002
+  name: Jin Woo
+  major: Software Engineering
+  year: Junior
+  email: jin.woo@example.edu
+- id: S003
+  name: Park Hana
+  major: Information Systems
+  year: Sophomore
+  email: park.hana@example.edu
+- id: S004
+  name: Lee Doyun
+  major: Data Science
+  year: Freshman
+  email: lee.doyun@example.edu
+

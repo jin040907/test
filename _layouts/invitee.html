@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<main class="invitee-page">
+  <header class="invitee-hero">
+    <h1>{{ page.name | default: page.title | default: page.slug | replace: '-', ' ' | capitalize }}</h1>
+    {% if page.role %}
+      <p class="invitee-role">{{ page.role }}</p>
+    {% endif %}
+  </header>
+
+  <article class="invitee-content">
+    {{ content }}
+  </article>
+
+  <p class="invitee-back">
+    <a href="{{ '/' | relative_url }}">← Back to home</a>
+  </p>
+</main>
+

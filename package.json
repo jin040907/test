@@ -1,0 +1,22 @@
+{
+  "name": "conf-parser",
+  "version": "1.0.0",
+  "description": "JavaScript parser for conf.yml with YAML anchors support",
+  "main": "scripts/parser.js",
+  "scripts": {
+    "start": "node scripts/parser.js",
+    "test": "node scripts/parser.js",
+    "serve": "node scripts/server.js"
+  },
+  "keywords": [
+    "yaml",
+    "parser",
+    "config"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
+

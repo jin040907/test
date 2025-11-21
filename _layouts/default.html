@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+    {% seo %}
+  </head>
+  <body>
+    <button class="toc-toggle" onclick="document.querySelector('.page-toc')?.classList.toggle('open')">☰</button>
+    {% if page.toc != false %}
+    <aside class="page-toc">
+      <div class="toc-content">
+        <h3>Table of Contents</h3>
+        <ul class="toc-list" id="toc-list"></ul>
+      </div>
+    </aside>
+    {% endif %}
+    <div class="content-wrapper">
+      {{ content }}
+    </div>
+    <script>
+      // Generate table of contents from headings
+      document.addEventListener('DOMContentLoaded', function() {
+        const tocList = document.getElementById('toc-list');
+        if (!tocList) return;
+        
+        const headings = document.querySelectorAll('main h2, main h3, main h4');
+        if (headings.length === 0) {
+          tocList.parentElement.parentElement.style.display = 'none';
+          return;
+        }
+        
+        headings.forEach((heading, index) => {
+          const id = heading.id || 'heading-' + index;
+          if (!heading.id) heading.id = id;
+          
+          const level = parseInt(heading.tagName.charAt(1));
+          const li = document.createElement('li');
+          li.className = 'toc-level-' + level;
+          li.innerHTML = '<a href="#' + id + '">' + heading.textContent + '</a>';
+          tocList.appendChild(li);
+        });
+      });
+    </script>
+  </body>
+</html>
+
